@@ -1,1 +1,85 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI HUB PRO - 14 Tools</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}body{background:#070710;color:#fff}header{display:flex;justify-content:space-between;padding:16px 5%;background:#121223;border-bottom:1px solid #222;position:sticky;top:0;z-index:10}.logo{font-weight:900;font-size:22px}.logo span{color:#7c6cff}.badge{font-size:11px;background:#10b981;color:#fff;padding:6px 12px;border-radius:20px}.hero{text-align:center;padding:45px 5% 20px;background:radial-gradient(600px at 50% 0%,#1d1a42,transparent)}.hero h1{font-size:34px;font-weight:900}.hero h1 span{color:#8b7cff}.hero p{color:#888;margin-top:10px}.search{max-width:420px;margin:20px auto;display:flex;background:#15152a;border:1px solid #2a2a4a;border-radius:30px;padding:4px}.search input{flex:1;background:0;border:0;color:#fff;padding:10px 16px;outline:0}.search button{background:#6c5cff;border:0;color:#fff;padding:9px 18px;border-radius:30px;font-weight:700}.grid{padding:20px 4% 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px}.card{background:#121223;border:1px solid #222238;border-radius:16px;padding:14px;cursor:pointer;min-height:120px}.card:hover{border-color:#6c5cff;transform:translateY(-2px)}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#070710;z-index:99;overflow:auto;padding:18px}.modal.active{display:block}.box{max-width:650px;margin:10px auto;background:#15151e;border:1px solid #2a2a4a;border-radius:18px;padding:20px}textarea,input{width:100%;background:#0a0a14;border:1px solid #2a2a4a;border-radius:10px;color:#fff;padding:12px;margin:8px 0;outline:none;font-size:14px}.btn{width:100%;background:linear-gradient(90deg,#6c5cff,#a78bfa);border:none;color:#fff;padding:12px;border-radius:10px;font-weight:800;cursor:pointer;margin-top:8px}.close{float:right;background:#222;border:none;color:#fff;padding:6px 12px;border-radius:20px}.img{width:100%;border-radius:12px;margin-top:10px}</style></head><body><header><div class="logo">AI HUB <span>PRO</span></div><div class="badge">✅ 14 Tools - Live</div></header><div class="hero"><h1>All Daily <span>AI Tools</span> in One Hub</h1><p>14 Premium Tools - Tap to Open - No 404</p><div class="search"><input id="s" placeholder="Search tools..."><button onclick="doSearch()">Search</button></div></div><div class="grid" id="grid"></div><div id="m-image" class="modal"><div class="box"><button class="close" onclick="cM('m-image')">✕</button><h2>🎨 Image Generator</h2><textarea id="pr" placeholder="A cute cat"></textarea><button class="btn" id="ib" onclick="genImg()">✨ GENERATE</button><div id="iout"></div></div></div><div id="m-humanizer" class="modal"><div class="box"><button class="close" onclick="cM('m-humanizer')">✕</button><h2>📝 Humanizer</h2><textarea id="hin" placeholder="Paste AI text"></textarea><button class="btn" onclick="humanize()">✨ HUMANIZE</button><textarea id="hout" style="min-height:140px"></textarea></div></div><div id="m-email" class="modal"><div class="box"><button class="close" onclick="cM('m-email')">✕</button><h2>📧 Cold Email</h2><input id="e1" placeholder="Product"><input id="e2" placeholder="Audience"><button class="btn" onclick="genEmail()">✨ WRITE EMAIL</button><textarea id="eout" style="min-height:180px"></textarea></div></div><div id="m-business" class="modal"><div class="box"><button class="close" onclick="cM('m-business')">✕</button><h2>💡 Business Names</h2><input id="b1" placeholder="Keyword e.g. AI"><button class="btn" onclick="genBiz()">✨ GENERATE</button><div id="bout" style="margin-top:10px;color:#a78bfa"></div></div></div><div id="m-script" class="modal"><div class="box"><button class="close" onclick="cM('m-script')">✕</button><h2>🎬 Script Writer</h2><input id="sc1" placeholder="Topic"><button class="btn" onclick="genScript()">✨ WRITE SCRIPT</button><textarea id="scout" style="min-height:200px"></textarea></div></div><div id="m-hash" class="modal"><div class="box"><button class="close" onclick="cM('m-hash')">✕</button><h2>#️⃣ Hashtags</h2><input id="h1" placeholder="Topic e.g. travel"><button class="btn" onclick="genHash()">✨ GENERATE</button><textarea id="hout2" style="min-height:120px"></textarea></div></div><div id="m-soon" class="modal"><div class="box" style="text-align:center"><button class="close" onclick="cM('m-soon')">✕</button><h2 style="margin:40px 0 10px">🚀 Coming Soon!</h2><p id="soonName" style="color:#6c5cff;font-weight:800;font-size:20px"></p><button class="btn" onclick="cM('m-soon')" style="margin-top:20px">Back</button></div></div><script>const tools=[{id:'m-image',ic:'🎨',t:'AI Image Generator',d:'Text to Image',k:'image',live:true},{id:'m-humanizer',ic:'📝',t:'AI Humanizer',d:'Bypass AI',k:'humanizer',live:true},{id:'m-email',ic:'📧',t:'Cold Email Writer',d:'High Converting',k:'email',live:true},{id:'m-business',ic:'💡',t:'Business Name Gen',d:'Premium Names',k:'business',live:true},{id:'m-script',ic:'🎬',t:'Script Writer',d:'Viral Scripts',k:'script',live:true},{id:'m-hash',ic:'#️⃣',t:'Hashtag Generator',d:'Insta & TikTok',k:'hashtag',live:true},{id:'m-soon',ic:'🖼️',t:'BG Remover',d:'Remove BG',k:'bg',live:false},{id:'m-soon',ic:'🔊',t:'Text to Speech',d:'AI Voice',k:'tts',live:false},{id:'m-soon',ic:'📄',t:'Resume Builder',d:'ATS Resume',k:'resume',live:false},{id:'m-soon',ic:'🎨',t:'Logo Maker',d:'AI Logo',k:'logo',live:false},{id:'m-soon',ic:'✍️',t:'Caption Generator',d:'Viral Captions',k:'caption',live:false},{id:'m-soon',ic:'🔍',t:'AI Detector',d:'Detect AI',k:'detector',live:false},{id:'m-soon',ic:'📺',t:'YT Title Generator',d:'Viral Titles',k:'youtube',live:false},{id:'m-soon',ic:'💬',t:'Paraphraser',d:'Rewrite Text',k:'paraphrase',live:false}];const grid=document.getElementById('grid');function render(list){grid.innerHTML='';list.forEach(x=>{grid.innerHTML+=`<div class=card onclick="openTool('${x.id}','${x.t}')"><div style=font-size:26px>${x.ic}</div><h3>${x.t}</h3><p style=color:#777;font-size:11px>${x.d}</p><small style=color:#6c5cff>${x.live?'✅ LIVE':'🚀 SOON'}</small></div>`})}render(tools);function openTool(id,name){if(id==='m-soon')document.getElementById('soonName').innerText=name;document.getElementById(id).classList.add('active')}function cM(id){document.getElementById(id).classList.remove('active')}function doSearch(){let q=document.getElementById('s').value.toLowerCase();render(tools.filter(t=>(t.t+t.d+t.k).toLowerCase().includes(q)))}document.getElementById('s').addEventListener('input',doSearch);function genImg(){let p=document.getElementById('pr').value.trim();if(!p)return alert('Prompt likho!');let b=document.getElementById('ib');b.innerText='⏳ Generating...';let seed=Math.floor(Math.random()*999999);let url=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?seed=${seed}&width=512&height=512&nologo=true`;document.getElementById('iout').innerHTML=`<img class=img src=${url} onload="document.getElementById('ib').innerText='✨ GENERATE'"><br><a href=${url} target=_blank style=color:#6c5cff>📥 Download</a>`}function humanize(){let t=document.getElementById('hin').value;if(!t)return alert('Text paste karo!');t=t.replace(/Moreover,|Furthermore,/gi,"");t="So here's the thing. "+t;document.getElementById('hout').value=t}function genEmail(){let p=document.getElementById('e1').value||'my product';let a=document.getElementById('e2').value||'founders';document.getElementById('eout').value=`Subject: Quick idea for ${a}\n\nHi, I built ${p} that saves 10+ hours/week. Can I send demo?\n\nDawood - AI HUB PRO`}function genBiz(){let k=document.getElementById('b1').value||'AI';let suf=['Hub','Pro','Labs','Nest','Forge','Works','Verse','Mind','Flow','Craft'];let h='';for(let i=0;i<10;i++)h+=`✅ ${k} ${suf[i]}<br>`;document.getElementById('bout').innerHTML=h}function genScript(){let t=document.getElementById('sc1').value||'AI tools';document.getElementById('scout').value=`HOOK: Stop scrolling! ${t} trick made me $1k\nVALUE: Use AI HUB PRO\nCTA: Follow!`}function genHash(){let k=document.getElementById('h1').value||'ai';document.getElementById('hout2').value=`#${k} #${k}tools #${k}tips #${k}2026 #aipro #viral #tech`}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Hub Pro - All AI Tools in One Place</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff;color:#111}
+header{padding:15px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10}
+header h2{font-weight:900}
+nav a{margin-left:15px;text-decoration:none;color:#111;font-weight:600}
+.hero{padding:80px 8%;text-align:center;background:linear-gradient(180deg,#f8f8ff,#fff)}
+.hero h1{font-size:42px;line-height:1.1}
+.hero h1 span{background:#111;color:#fff;padding:0 10px;border-radius:8px}
+.hero p{margin:20px auto;max-width:600px;color:#555;font-size:18px}
+.hero button{padding:14px 28px;background:#111;color:#fff;border:0;border-radius:10px;font-size:16px;margin-top:10px;cursor:pointer}
+.tools{padding:50px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.card{border:1px solid #eee;padding:20px;border-radius:14px}
+.card h3{margin-bottom:8px}
+.pricing{padding:60px 8%;background:#f6f6f7;text-align:center}
+.pricing h2{font-size:32px}
+.price-box{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.p-card{background:#fff;padding:30px 20px;border-radius:16px;width:280px;border:1px solid #ddd;text-align:center}
+.p-card.pro{border:2px solid #111;transform:scale(1.05)}
+.p-card h1{font-size:36px;margin:10px 0}
+.p-card button{width:100%;padding:12px;margin-top:15px;border-radius:10px;border:1px solid #111;cursor:pointer}
+.p-card.pro button{background:#111;color:#fff}
+footer{padding:30px;text-align:center;color:#777;border-top:1px solid #eee}
+</style>
+</head>
+<body>
+<header>
+<h2>AI HUB PRO</h2>
+<nav><a href="#">Tools</a><a href="#pricing">Pricing</a><a href="#">Login</a></nav>
+</header>
+<section class="hero">
+<h1>All Best <span>AI Tools</span> In One Place</h1>
+<p>ChatGPT, Image Generator, Code Helper, Video AI - Sab kuch ek hi website par.</p>
+<button>Explore 100+ Tools</button>
+</section>
+<section class="tools">
+<div class="card"><h3>🤖 Chat AI</h3><p>ChatGPT style fast answers</p></div>
+<div class="card"><h3>🎨 Image AI</h3><p>Text to image in 2 sec</p></div>
+<div class="card"><h3>💻 Code AI</h3><p>Fix code & build apps</p></div>
+<div class="card"><h3>🎬 Video AI</h3><p>AI video generator</p></div>
+</section>
+<section id="pricing" class="pricing">
+<h2>Simple Pricing, No Tension</h2>
+<p style="color:#666;margin-top:8px">Start free, upgrade when you grow</p>
+<div class="price-box">
+<div class="p-card">
+<h3>Free</h3>
+<h1>$0</h1>
+<p>/month</p>
+<br>
+<p>✓ 10 AI Tools Daily</p>
+<p>✓ Basic Support</p>
+<button>Start Free</button>
+</div>
+<div class="p-card pro">
+<h3>Pro ⭐ Most Popular</h3>
+<h1>$9.99</h1>
+<p>/month</p>
+<br>
+<p>✓ Unlimited Tools</p>
+<p>✓ All Pro Features</p>
+<p>✓ Priority Support</p>
+<button>Go Pro - Best Value</button>
+</div>
+<div class="p-card">
+<h3>Agency</h3>
+<h1>$29</h1>
+<p>/month</p>
+<br>
+<p>✓ Everything in Pro</p>
+<p>✓ Team Access</p>
+<p>✓ API Access</p>
+<button>Go Agency</button>
+</div>
+</div>
+</section>
+<footer>© 2026 AI Hub Pro - Built by Dawood Muzaffar</footer>
+</body>
+</html>
