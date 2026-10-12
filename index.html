@@ -1,30 +1,64 @@
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LCS SHOES Kasur - Art-013</title><style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#f5f5f5}
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LCS SHOES Kasur - Art-013 AUTO</title><style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}body{background:#f2f2f2}
 .top{background:#00e676;text-align:center;padding:9px;font-weight:900;font-size:12px}
-.head{background:#000;color:#fff;padding:15px;text-align:center}
-.box{max-width:480px;margin:0 auto;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.1)}
-.hero{width:100%;height:500px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
+.head{background:#000;color:#fff;padding:15px;text-align:center;position:sticky;top:0;z-index:10}
+.box{max-width:480px;margin:0 auto;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.08)}
+.hero{width:100%;height:480px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
 .hero img{width:100%;height:100%;object-fit:contain}
-.badge{position:absolute;top:12px;left:12px;background:#000;color:#fff;padding:6px 12px;border-radius:8px;font-size:11px;font-weight:800}
+.badge{position:absolute;top:12px;left:12px;background:#000;color:#fff;padding:6px 12px;border-radius:8px;font-size:11px}
 .off{position:absolute;top:12px;right:12px;background:#ff3d00;color:#fff;padding:6px 12px;border-radius:8px;font-size:11px;font-weight:900}
-.info{padding:18px}
-.title{font-size:24px;font-weight:900}
-.price{font-size:32px;font-weight:900;margin:10px 0}
+.thumbs{display:flex;gap:10px;padding:12px;overflow:auto;background:#fafafa;min-height:96px}
+.th{width:84px;height:84px;border-radius:12px;border:2px solid #eee;overflow:hidden;flex-shrink:0;cursor:pointer;background:#fff}
+.th.active{border-color:#000;box-shadow:0 0 0 2px #000}.th img{width:100%;height:100%;object-fit:contain}
+.info{padding:18px}.title{font-size:23px;font-weight:900}.price{font-size:32px;font-weight:900;margin:10px 0}
 .btn{background:#000;color:#fff;width:100%;padding:18px;border:none;border-radius:14px;font-size:17px;font-weight:900;margin-top:18px}
+.load{text-align:center;padding:40px;color:#666}
 </style></head><body>
-<div class="top">🚚 FREE DELIVERY KASUR • 0304-7672836</div>
+<div class="top">FREE DELIVERY KASUR • 0304-7672836 • AUTO REAL PICS</div>
 <div class="head"><h1>LCS SHOES KASUR - Art-013</h1></div>
 <div class="box">
-<div class="hero"><span class="badge">Art-013 • 40-44</span><span class="off">23% OFF</span><img src="IMG-20261012-WA0278.jpg"></div>
+<div class="hero"><span class="badge">Art-013 • 40-44</span><span class="off">23% OFF</span><img id="main" src="" style="display:none"><div id="loader" class="load">Tumhari Real Pics Load Ho Rahi Hain...<br><small>1 second</small></div></div>
+<div class="thumbs" id="thumbs"></div>
 <div class="info">
-<div class="title">Art-013 Slip-Ins - Black Premium REAL PIC</div>
-<p style="color:#666;font-size:13px;margin:8px 0">Tumhari Asli Pic - Ab 100% Dikh Rahi Hai - Breathable - Size 40-44</p>
-<div><span style="font-size:32px;font-weight:900">Rs. 4,200</span><span style="color:#999;text-decoration:line-through;margin-left:8px">Rs. 5,500</span></div>
-<p style="color:#2e7d32;font-weight:700;font-size:13px;margin-top:8px">✓ Real Image Loaded - No White Screen!</p>
-<button class="btn" onclick="window.open('https://wa.me/923047672836?text=Salam LCS Art-013 Black Order 4200','_blank')">ORDER NOW - WHATSAPP</button>
-<p style="text-align:center;font-size:12px;color:#666;margin-top:12px">Size: 40 | 41 | 42 | 43 | 44 - Colour: Black, Beige, Grey</p>
+<div class="title" id="title">Art-013 Slip-Ins - Premium REAL</div>
+<p style="color:#666;font-size:13px;margin:8px 0">Tumhari 5 Asli Pics Auto Detect - Breathable - Size 40-44</p>
+<div><span class="price">Rs. 4,200</span><span style="color:#999;text-decoration:line-through;margin-left:8px">Rs. 5,500</span></div>
+<button class="btn" onclick="order()">ORDER NOW - WHATSAPP</button>
 </div></div></div>
-</body></html>
+<script>
+let currentColor='Black';
+async function loadImages(){
+try{
+let res=await fetch('https://api.github.com/repos/dawoodmuzaffar466/ai-hub-pro/contents');
+let files=await res.json();
+let imgs=files.filter(f=>f.name.toLowerCase().endsWith('.jpg')||f.name.toLowerCase().endsWith('.jpeg')||f.name.toLowerCase().endsWith('.png')||f.name.toLowerCase().endsWith('.webp')).map(f=>f.name);
+console.log(imgs);
+if(imgs.length===0){document.getElementById('loader').innerText='No Images Found!';return;}
+document.getElementById('main').src=imgs[0];
+document.getElementById('main').style.display='block';
+document.getElementById('loader').style.display='none';
+let thumbs=document.getElementById('thumbs');
+imgs.forEach((name,i)=>{
+let div=document.createElement('div');
+div.className='th'+(i===0?' active':'');
+div.innerHTML=`<img src="${name}">`;
+div.onclick=()=>{
+document.getElementById('main').src=name;
+document.getElementById('title').innerText='Art-013 Slip-Ins - Pic '+(i+1);
+currentColor='Pic '+(i+1);
+document.querySelectorAll('.th').forEach(t=>t.classList.remove('active'));
+div.classList.add('active');
+};
+thumbs.appendChild(div);
+});
+}catch(e){
+document.getElementById('loader').innerText='Error: '+e.message+' - Try manual: IMG-20261012-WA0278.jpg';
+document.getElementById('main').src='IMG-20261012-WA0278.jpg';
+document.getElementById('main').style.display='block';
+document.getElementById('loader').style.display='none';
+}
+}
+function order(){window.open('https://wa.me/923047672836?text=Salam LCS Art-013 '+currentColor+' Order 4200','_blank');}
+loadImages();
+</script></body></html>
