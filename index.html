@@ -1,80 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LCS SHOES Kasur - Main Rohi Nala</title>
+<title>LCS SHOES FACTORY - Main Rohi Nala Kasur</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
-.header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#fff;position:sticky;top:0;box-shadow:0 2px 15px rgba(0,0,0,0.06)}
-.logo{font-weight:900;font-size:24px;line-height:0.9}.logo small{font-size:12px;letter-spacing:2px;color:#777}.logo span{color:#0d9a5a}
-.wa-top{background:#25D366;color:#fff;padding:11px 20px;border-radius:100px;text-decoration:none;font-weight:800}
-.hero{padding:28px 20px;background:#fdf6ec}.hero h1{font-size:46px;font-weight:900;line-height:0.95}.hero h1 .green{color:#0d9a5a}
-.hero p{margin:16px 0 20px;color:#666;font-size:17px}
-.btn-black{background:#101a2e;color:#fff;padding:16px 28px;border-radius:100px;text-decoration:none;font-weight:800;display:inline-block}
-.btn-green{background:#25D366;color:#fff;padding:16px 28px;border-radius:100px;text-decoration:none;font-weight:800;display:inline-flex;margin-top:10px}
-.info{margin-top:18px;font-weight:700;font-size:14px}
-.main-shoe{margin:22px auto 0;background:linear-gradient(135deg,#ff1e27,#c4121a);border-radius:28px;height:280px;display:flex;align-items:center;justify-content:center;max-width:500px}
-.main-shoe img{width:92%;transform:rotate(-14deg)}
-.products{padding:24px 16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#fff;border:1.5px solid #eee;border-radius:18px;padding:12px;text-align:center}
-.card p{color:#0d9a5a;font-weight:800}.card a{display:block;margin-top:8px;background:#111;color:#fff;padding:9px;border-radius:100px;text-decoration:none;font-weight:700}
-.urban{background:#fff;border:2px solid #111;border-radius:20px;padding:16px;margin:24px 16px}
-.size-btn{padding:10px 16px;border:1.5px solid #111;border-radius:10px;background:#fff;font-weight:700;margin:4px}
-.footer{background:#101a2e;color:#fff;padding:24px;text-align:center;margin-top:20px}.footer a{color:#25D366;text-decoration:none;font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+.header{display:flex;justify-content:space-between;padding:14px;background:#fff;position:sticky;top:0;box-shadow:0 2px 10px #0001;z-index:9}
+.logo{font-weight:900;font-size:20px;line-height:0.9}.logo span{color:#0d9a5a}.logo small{font-size:11px;color:#777}
+.wa{background:#25D366;color:#fff;padding:10px 18px;border-radius:100px;text-decoration:none;font-weight:800;font-size:14px}
+.hero{padding:22px;background:#fdf6ec}
+.card{border:2px solid #111;border-radius:20px;padding:14px;margin:16px;background:#fff}
+.abtn{padding:9px 16px;border:1.5px solid #111;border-radius:10px;background:#fff;font-weight:700;margin:3px;cursor:pointer}
+.abtn.active{background:#111;color:#fff}
+.ord{display:block;text-align:center;background:#25D366;color:#fff;padding:13px;border-radius:100px;text-decoration:none;font-weight:800;margin-top:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="header">
-<div class="logo">LCS <span>SHOES</span><br><small>KASUR</small></div>
-<a class="wa-top" href="https://wa.me/923047873838" target="_blank">WhatsApp</a>
+<div class="logo">LCS <span>SHOES</span><br><small>FACTORY KASUR</small></div>
+<a class="wa" href="https://wa.me/923047873838">0304-7873838</a>
 </div>
-
 <div class="hero">
-<h1>Step Up Your<br><span class="green">Style</span> in Kasur</h1>
-<p>Kasur ki apni dukan - Premium Quality Shoes</p>
-<a href="#shop" class="btn-black">Shop Now ↓</a><br>
-<a href="https://wa.me/923047873838?text=Salam!%20LCS%20SHOES%20Main%20Rohi%20Nala%20se%20order" class="btn-green" target="_blank">🟢 Order on WhatsApp - 0304-7873838</a>
-<div class="info">📍 Main Rohi Nala, Kasur | 📞 0304-7873838</div>
-<div class="main-shoe"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800"></div>
+<h1 style="font-size:34px;font-weight:900">LCS SHOES <span style="color:#0d9a5a">FACTORY</span></h1>
+<p>Main Rohi Nala, Kasur - Factory Direct Sale</p>
+<p style="font-weight:700;margin-top:8px;font-size:13px">📍 Factory - Main Rohi Nala | 📞 0304-7873838</p>
 </div>
 
-<div class="urban" id="shop">
-<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a?q=80&w=600" style="width:100%;height:220px;object-fit:contain;background:#f9f9f9;border-radius:16px">
-<h2 style="font-size:22px;font-weight:900;margin:12px 0 4px">Urban Sport - LCS SHOES</h2>
-<p style="color:#0d9a5a;font-weight:800;font-size:18px">Rs. 3,999</p>
-<p style="font-weight:700;margin-top:14px">Select Size:</p>
-<div id="sizes">
-<button onclick="selectSize(this)" class="size-btn">40</button>
-<button onclick="selectSize(this)" class="size-btn">41</button>
-<button onclick="selectSize(this)" class="size-btn">42</button>
-<button onclick="selectSize(this)" class="size-btn">43</button>
-<button onclick="selectSize(this)" class="size-btn">44</button>
-</div>
-<a id="wa-link" href="https://wa.me/923047873838?text=Salam!%20Mujhe%20Urban%20Sport%20LCS%20SHOES%20chahiye%20-%20Size%3A%20__" style="display:block;text-align:center;background:#25D366;color:#fff;padding:14px;border-radius:100px;text-decoration:none;font-weight:800;margin-top:12px">🟢 Size Select Karke Order Karo</a>
-</div>
-
-<div class="products">
 <div class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300"><h3>Nike Air Max</h3><p>Rs. 4,500</p><a href="https://wa.me/923047873838?text=Nike%20Air%20Max%20order">Order Now</a></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=300"><h3>Jordan Retro</h3><p>Rs. 5,200</p><a href="https://wa.me/923047873838?text=Jordan%20Retro%20order">Order Now</a></div>
+<!-- BEIGE -->
+<div class="card">
+<img src="art-013-beige.jpg" style="width:100%;height:200px;object-fit:contain;background:#f9f9f9;border-radius:14px">
+<h3>Art-013 Beige</h3>
+<p style="color:#0d9a5a;font-weight:800">Rs. 4,200</p>
+<p style="font-size:12px">Size 40/44</p>
+<div style="margin-top:8px">
+<button onclick="order(this,'Art-013 Beige',40)" class="abtn">40</button><button onclick="order(this,'Art-013 Beige',41)" class="abtn">41</button><button onclick="order(this,'Art-013 Beige',42)" class="abtn">42</button><button onclick="order(this,'Art-013 Beige',43)" class="abtn">43</button><button onclick="order(this,'Art-013 Beige',44)" class="abtn">44</button>
+</div>
+<a id="btn-Art-013 Beige" class="ord" href="https://wa.me/923047873838?text=Salam! Art-013 Beige chahiye">Order Beige</a>
+</div>
+
+<!-- NAVY BLUE -->
+<div class="card">
+<img src="art-013-navy.jpg" style="width:100%;height:200px;object-fit:contain;background:#f9f9f9;border-radius:14px">
+<h3>Art-013 Navy Blue</h3>
+<p style="color:#0d9a5a;font-weight:800">Rs. 4,200</p>
+<p style="font-size:12px">Size 40/44</p>
+<div style="margin-top:8px">
+<button onclick="order(this,'Art-013 Navy',40)" class="abtn">40</button><button onclick="order(this,'Art-013 Navy',41)" class="abtn">41</button><button onclick="order(this,'Art-013 Navy',42)" class="abtn">42</button><button onclick="order(this,'Art-013 Navy',43)" class="abtn">43</button><button onclick="order(this,'Art-013 Navy',44)" class="abtn">44</button>
+</div>
+<a id="btn-Art-013 Navy" class="ord" href="https://wa.me/923047873838?text=Salam! Art-013 Navy chahiye">Order Navy</a>
+</div>
+
+<!-- FULL BLACK -->
+<div class="card">
+<img src="art-013-black.jpg" style="width:100%;height:200px;object-fit:contain;background:#f9f9f9;border-radius:14px">
+<h3>Art-013 Full Black</h3>
+<p style="color:#0d9a5a;font-weight:800">Rs. 4,200</p>
+<p style="font-size:12px">Size 40/44</p>
+<div style="margin-top:8px">
+<button onclick="order(this,'Art-013 Full Black',40)" class="abtn">40</button><button onclick="order(this,'Art-013 Full Black',41)" class="abtn">41</button><button onclick="order(this,'Art-013 Full Black',42)" class="abtn">42</button><button onclick="order(this,'Art-013 Full Black',43)" class="abtn">43</button><button onclick="order(this,'Art-013 Full Black',44)" class="abtn">44</button>
+</div>
+<a id="btn-Art-013 Full Black" class="ord" href="https://wa.me/923047873838?text=Salam! Art-013 Full Black chahiye">Order Full Black</a>
 </div>
 </div>
 
-<div class="footer">
-<h3>LCS SHOES Kasur</h3>
+<div style="background:#101a2e;color:#fff;padding:20px;text-align:center;margin-top:16px">
+<h3>LCS SHOES FACTORY</h3>
 <p>📍 Main Rohi Nala, Kasur</p>
-<a href="https://wa.me/923047873838">📞 0304-7873838</a>
+<a href="https://wa.me/923047873838" style="color:#25D366;font-weight:800;text-decoration:none">📞 0304-7873838</a>
 </div>
 
 <script>
-function selectSize(btn){
-document.querySelectorAll('.size-btn').forEach(b=>{b.style.background='#fff';b.style.color='#111'});
-btn.style.background='#111';btn.style.color='#fff';
-let size = btn.innerText;
-let link = document.getElementById('wa-link');
-link.href = `https://wa.me/923047873838?text=Salam!%20Mujhe%20Urban%20Sport%20-%20LCS%20SHOES%20Kasur%20Main%20Rohi%20Nala%20chahiye.%20Size%3A%20${size}%20Price%20Rs.3999`;
-link.innerText = `🟢 Size ${size} Order on WhatsApp - 0304-7873838`;
+function order(btn, name, size){
+let card = btn.closest('.card');
+card.querySelectorAll('.abtn').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+let link = card.querySelector('.ord');
+link.href=`https://wa.me/923047873838?text=Salam!%20LCS%20SHOES%20FACTORY%20Main%20Rohi%20Nala%20Kasur%20-%20Mujhe%20${encodeURIComponent(name)}%20Size%20${size}%20chahiye.%20Rs.4200`;
+link.innerText=`Size ${size} - Order on WhatsApp`;
 }
 </script>
 </body>
