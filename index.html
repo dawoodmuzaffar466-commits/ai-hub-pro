@@ -1,141 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LCS SHOES - Premium Store | Art-013</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LCS SHOES - Premium</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f5f5f7;color:#111}
-.top-bar{background:#000;color:#fff;text-align:center;padding:12px;font-weight:800;letter-spacing:1px;font-size:13px}
-.header{max-width:1300px;margin:0 auto;padding:18px 25px;display:flex;justify-content:space-between;align-items:center;background:#fff}
-.logo{font-weight:800;font-size:26px;letter-spacing:2px}
-.call{background:#000;color:#fff;padding:8px 16px;border-radius:30px;font-size:13px;font-weight:600}
-.main{max-width:1300px;margin:0 auto;padding:30px;display:grid;grid-template-columns:1.4fr 1fr;gap:35px}
-@media(max-width:900px){.main{grid-template-columns:1fr;padding:15px}}
-.left{background:#fff;border-radius:28px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.08)}
-.main-img{width:100%;height:700px;object-fit:contain;background:#fff;border-radius:20px}
-@media(max-width:900px){.main-img{height:420px}}
-.thumbs{display:flex;gap:15px;margin-top:25px;overflow-x:auto}
-.thumb{width:120px;height:120px;min-width:120px;border-radius:18px;border:3px solid #eee;overflow:hidden;cursor:pointer;transition:.2s;background:#fff}
-.thumb.active{border-color:#000;transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.15)}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.right{background:#fff;border-radius:28px;padding:36px;box-shadow:0 20px 60px rgba(0,0,0,.08);height:fit-content}
-.badge{background:#e8f5e9;color:#1b5e20;padding:8px 16px;border-radius:30px;font-size:12px;font-weight:800;display:inline-block}
-.title{font-size:44px;font-weight:800;line-height:1.1;margin:18px 0 10px}
-.rating{color:#ff9800;font-weight:600;font-size:14px}
-.price-box{display:flex;align-items:center;gap:15px;margin:25px 0}
-.price{font-size:48px;font-weight:800}
-.old{font-size:20px;color:#999;text-decoration:line-through}
-.off{background:#000;color:#fff;padding:8px 14px;border-radius:10px;font-weight:800;font-size:13px}
-.details-box{background:#fafafa;border:1px solid #eee;padding:22px;border-radius:18px;margin:22px 0}
-.details-box h4{font-size:15px;margin-bottom:14px}
-.details-box p{font-size:14px;color:#444;line-height:1.9}
-.label{font-weight:800;margin:18px 0 10px;font-size:14px;letter-spacing:.5px}
-.options{display:flex;flex-wrap:wrap;gap:12px}
-.opt{padding:14px 24px;border:2.5px solid #e5e7eb;border-radius:14px;font-weight:700;cursor:pointer;transition:.2s;background:#fff}
-.opt.active{background:#000;color:#fff;border-color:#000}
-.btn{width:100%;background:#000;color:#fff;padding:22px;border:none;border-radius:18px;font-size:20px;font-weight:800;cursor:pointer;margin-top:26px;letter-spacing:1px}
-.btn:hover{background:#222;transform:translateY(-2px);box-shadow:0 15px 30px rgba(0,0,0,.2)}
-.trust{display:flex;justify-content:space-between;margin-top:22px;text-align:center}
-.trust b{display:block;font-size:16px;color:#000}
-.trust span{font-size:12px;color:#666}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#f5f5f7}
+.top{background:#000;color:#fff;text-align:center;padding:12px;font-weight:800;font-size:13px}
+.head{max-width:1200px;margin:auto;background:#fff;padding:15px 20px;display:flex;justify-content:space-between}
+.main{max-width:1200px;margin:auto;padding:20px;display:grid;grid-template-columns:1.2fr 1fr;gap:25px}
+@media(max-width:800px){.main{grid-template-columns:1fr}}
+.left,.right{background:#fff;border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.mimg{width:100%;height:600px;object-fit:contain}
+@media(max-width:800px){.mimg{height:400px}}
+.th{display:flex;gap:10px;margin-top:20px}
+.th div{width:90px;height:90px;border:3px solid #eee;border-radius:12px;overflow:hidden;cursor:pointer}
+.th div.active{border-color:#000}
+.th img{width:100%;height:100%;object-fit:cover}
+.price{font-size:42px;font-weight:900;margin:15px 0}
+.cut{color:#999;text-decoration:line-through;font-size:18px}
+.btn{width:100%;background:#000;color:#fff;padding:20px;border:none;border-radius:15px;font-size:19px;font-weight:900;margin-top:20px}
+.opt{display:inline-block;padding:12px 20px;border:2px solid #ddd;border-radius:12px;margin:5px;font-weight:700;cursor:pointer}
+.opt.active{background:#000;color:#fff}
 </style>
 </head>
 <body>
-<div class="top-bar">🔥 FREE DELIVERY ALL OVER PAKISTAN • CASH ON DELIVERY • 7 DAYS EASY RETURN 🔥</div>
-<div class="header">
-<div class="logo">LCS SHOES</div>
-<div class="call">📞 0304-7873838</div>
-</div>
-
+<div class="top">FREE DELIVERY - CASH ON DELIVERY - 0304-7873838</div>
+<div class="head"><b>LCS SHOES</b><span>📞 0304-7873838</span></div>
 <div class="main">
 <div class="left">
-<img id="mainImg" class="main-img" src="Beige.jpg" alt="LCS Shoe">
-<div class="thumbs">
-<div class="thumb active" onclick="changeImg('Beige.jpg',this)"><img src="Beige.jpg"></div>
-<div class="thumb" onclick="changeImg('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
-<div class="thumb" onclick="changeImg('GREY.jpg',this)"><img src="GREY.jpg"></div>
-<div class="thumb" onclick="changeImg('black.jpg',this)"><img src="black.jpg"></div>
+<img id="m" class="mimg" src="Beige.jpg">
+<div class="th">
+<div class="active" onclick="c('Beige.jpg',this)"><img src="Beige.jpg"></div>
+<div onclick="c('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
+<div onclick="c('GREY.jpg',this)"><img src="GREY.jpg"></div>
+<div onclick="c('black.jpg',this)"><img src="black.jpg"></div>
 </div>
 </div>
-
 <div class="right">
-<span class="badge">✓ BEST SELLER • PREMIUM QUALITY • IN STOCK</span>
-<div class="title">Skecher Slip-Ins<br>Art-013 Edition</div>
-<div class="rating">★★★★★ 4.9/5 (1,247 Reviews) • 1000+ Sold</div>
-
-<div class="price-box">
-<div class="price">Rs.4,899</div>
-<div class="old">Rs.5,500</div>
-<div class="off">SAVE 11%</div>
-</div>
-
-<div class="details-box">
-<h4>📦 PRODUCT DETAILS - PREMIUM</h4>
-<p>✓ <b>Material:</b> Breathable Mesh + Memory Foam Comfort</p>
-<p>✓ <b>Sole:</b> Anti-Slip Rubber, Shock Absorber, Ultra Light</p>
-<p>✓ <b>Design:</b> Slip-Ins Technology - No Laces Needed</p>
-<p>✓ <b>Comfort:</b> All Day Comfort - Office, Walking, Gym</p>
-<p>✓ <b>Sizes:</b> 40, 41, 42, 43, 44 Available</p>
-<p>✓ <b>Colors:</b> Beige, Navy Blue, Grey, Jet Black</p>
-<p>✓ <b>Delivery:</b> 2-3 Days - All Pakistan</p>
-</div>
-
-<div class="label">SELECT COLOR:</div>
-<div class="options" id="colorBox">
-<div class="opt active" onclick="pickColor(this,'Beige.jpg')">Beige</div>
-<div class="opt" onclick="pickColor(this,'Navy blue.jpg')">Navy Blue</div>
-<div class="opt" onclick="pickColor(this,'GREY.jpg')">Grey</div>
-<div class="opt" onclick="pickColor(this,'black.jpg')">Black</div>
-</div>
-
-<div class="label">SELECT SIZE:</div>
-<div class="options" id="sizeBox">
-<div class="opt" onclick="pickSize(this)">40</div>
-<div class="opt" onclick="pickSize(this)">41</div>
-<div class="opt active" onclick="pickSize(this)">42</div>
-<div class="opt" onclick="pickSize(this)">43</div>
-<div class="opt" onclick="pickSize(this)">44</div>
-</div>
-
-<button class="btn" onclick="orderNow()">ORDER NOW - WHATSAPP</button>
-
-<div class="trust">
-<div><b>🚚 Free</b><span>Delivery</span></div>
-<div><b>↩️ 7 Days</b><span>Return</span></div>
-<div><b>💳 COD</b><span>Available</span></div>
-<div><b>📞 0304</b><span>7873838</span></div>
+<h1>Skecher Slip-Ins Art-013</h1>
+<p>★★★★★ 4.9/5 (1247 Reviews)</p>
+<div class="price">Rs. 4,899 <span class="cut">Rs. 5,500</span></div>
+<p>✓ Material: Breathable Mesh + Memory Foam</p>
+<p>✓ Sole: Anti-Slip, Ultra Light</p>
+<p>✓ Comfort: Slip-Ins Tech, No Laces</p>
+<p>✓ Sizes: 40,41,42,43,44</p>
+<p>✓ Colors: Beige, Navy Blue, Grey, Black</p>
+<br>
+<b>Color:</b><br>
+<div id="col"><span class="opt active" onclick="p1(this,'Beige.jpg')">Beige</span><span class="opt" onclick="p1(this,'Navy blue.jpg')">Navy</span><span class="opt" onclick="p1(this,'GREY.jpg')">Grey</span><span class="opt" onclick="p1(this,'black.jpg')">Black</span></div>
+<br>
+<b>Size:</b><br>
+<div id="siz"><span class="opt" onclick="p2(this)">40</span><span class="opt" onclick="p2(this)">41</span><span class="opt active" onclick="p2(this)">42</span><span class="opt" onclick="p2(this)">43</span><span class="opt" onclick="p2(this)">44</span></div>
+<button class="btn" onclick="ord()">ORDER NOW - WHATSAPP</button>
+<p style="text-align:center;margin-top:15px;font-size:12px">🚚 2-3 Days Delivery | ↩️ 7 Days Return</p>
 </div>
 </div>
-</div>
-
 <script>
-function changeImg(src, el){
-document.getElementById('mainImg').src = src;
-document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
-el.classList.add('active');
-}
-function pickColor(el, src){
-document.querySelectorAll('#colorBox .opt').forEach(o=>o.classList.remove('active'));
-el.classList.add('active');
-document.getElementById('mainImg').src = src;
-document.querySelectorAll('.thumb').forEach(t=>{
-t.classList.remove('active');
-if(t.innerHTML.includes(src)){t.classList.add('active')}
-});
-}
-function pickSize(el){
-document.querySelectorAll('#sizeBox .opt').forEach(o=>o.classList.remove('active'));
-el.classList.add('active');
-}
-function orderNow(){
-var color = document.querySelector('#colorBox .opt.active').innerText;
-var size = document.querySelector('#sizeBox .opt.active').innerText;
-var text = "Assalam o Alaikum!%0A%0AMujhe LCS SHOES order karna hai:%0A%0A👟 Product: Skecher Slip-Ins Art-013%0A🎨 Color: " + color + "%0A📏 Size: " + size + "%0A💰 Price: Rs.4,899%0A%0A📝 Naam: %0A📍 Address: %0A🏙️ City: %0A📞 Phone: ";
-window.open("https://wa.me/923047873838?text=" + text, "_blank");
-}
+function c(s,e){document.getElementById('m').src=s;document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
+function p1(e,s){document.querySelectorAll('#col .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active');document.getElementById('m').src=s}
+function p2(e){document.querySelectorAll('#siz .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
+function ord(){var col=document.querySelector('#col .opt.active').innerText;var siz=document.querySelector('#siz .opt.active').innerText;window.open('https://wa.me/923047873838?text=Salam! Order LCS Art-013%0AColor:'+col+'%0ASize:'+siz+'%0APrice:4899','_blank')}
 </script>
 </body>
 </html>
