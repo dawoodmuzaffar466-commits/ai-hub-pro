@@ -3,29 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LCS SHOES - Premium Store</title>
+<title>LCS SHOES - Premium</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui, sans-serif}
 body{background:#f5f5f7}
-.top{background:#000;color:#fff;text-align:center;padding:10px;font-size:14px;font-weight:bold;letter-spacing:1px}
-.container{max-width:1200px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px}
-@media(max-width:850px){.container{grid-template-columns:1fr}}
-.left{background:#fff;border-radius:24px;padding:25px;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-.main-img{width:100%;height:600px;object-fit:contain;border-radius:16px;background:#fff}
-@media(max-width:850px){.main-img{height:400px}}
-.thumbs{display:flex;gap:15px;margin-top:20px}
-.thumb{width:100px;height:100px;border-radius:14px;border:3px solid #eee;overflow:hidden;cursor:pointer;background:#fff}
-.thumb.active{border-color:#000}
+.top{background:#000;color:#fff;text-align:center;padding:12px;font-weight:800;letter-spacing:1px;font-size:14px}
+.header{max-width:1250px;margin:0 auto;background:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.logo{font-weight:900;font-size:24px;letter-spacing:2px}
+.main{max-width:1250px;margin:0 auto;padding:24px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px}
+@media(max-width:900px){.main{grid-template-columns:1fr}}
+.left{background:#fff;border-radius:24px;padding:30px;box-shadow:0 15px 50px rgba(0,0,0,.08)}
+.main-img{width:100%;height:650px;object-fit:contain;background:#fff;border-radius:16px}
+@media(max-width:900px){.main-img{height:420px}}
+.thumbs{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap}
+.thumb{width:115px;height:115px;border-radius:16px;border:3px solid #eee;overflow:hidden;cursor:pointer;background:#fff;transition:.2s}
+.thumb.active{border-color:#000;transform:scale(1.05)}
 .thumb img{width:100%;height:100%;object-fit:cover}
-.right{background:#fff;border-radius:24px;padding:35px;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-.badge{background:#000;color:#fff;padding:8px 14px;border-radius:30px;font-size:12px;font-weight:bold;display:inline-block}
-.title{font-size:38px;font-weight:800;margin:15px 0 5px;line-height:1.1}
-.rating{color:#ff9800;font-weight:bold;margin:10px 0}
-.price-row{display:flex;align-items:center;gap:15px;margin:20px 0}
-.price{font-size:42px;font-weight:900}
+.right{background:#fff;border-radius:24px;padding:34px;box-shadow:0 15px 50px rgba(0,0,0,.08)}
+.badge{background:#000;color:#fff;padding:8px 16px;border-radius:30px;font-size:12px;font-weight:800;display:inline-block}
+.title{font-size:42px;font-weight:900;line-height:1.1;margin:18px 0 8px}
+.stars{color:#ff9800;font-weight:700;font-size:14px;margin-bottom:6px}
+.price-row{display:flex;align-items:center;gap:14px;margin:22px 0}
+.price{font-size:46px;font-weight:900}
 .cut{color:#999;text-decoration:line-through;font-size:20px}
-.off{background:#ff3b30;color:#fff;padding:6px 12px;border-radius:8px;font-weight:800}
-.detail-box{background:#f9f9f9;padding:20px;border-radius:16px;margin:20px 0}
-.detail-box h4{margin-bottom:12px;font-size:16px}
-.detail-box p{font-size:14px;color:#555;line-height:1.6;margin:6px 0}
-.size-row
+.off{background:#ff3b30;color:#fff;padding:7px 12px;border-radius:10px;font-weight:900;font-size:14px}
+.details{background:#f9fafb;padding:20px;border-radius:18px;margin:20px 0;border:1px solid #eee}
+.details h4{margin-bottom:12px;font-size:15px}
+.details p{color:#444;line-height:1.8;font-size:14px}
+.sizes{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
+.sz{padding:13px 22px;border:2.5px solid #e5e7eb;border-radius:14px;font-weight:800;cursor:pointer;background:#fff;transition:.2s}
+.sz.active{background:#000;color:#fff;border-color:#000}
+.btn{width:100%;background:#000;color:#fff;padding:21px;border:none;border-radius:18px;font-size:19px;font-weight:900;cursor:pointer;margin-top:20px;letter-spacing:.5px}
+.btn:hover{background:#111}
+.trust{display:flex;justify-content:space-between;margin-top:20px;text-align:center;font-size:12px;color:#666}
+.trust b{color:#000;font-size:15px;display:block}
+</style>
+</head>
+<body>
+<div class="top">🔥 FREE DELIVERY ALL PAKISTAN • CASH ON DELIVERY • 7 DAYS RETURN 🔥</div>
+<div class="header"><div class="logo">LCS SHOES</div><div>📞 0300-1234567</div></div>
+
+<div class="main">
+<div class="left">
+<img id="mainImg" class="main-img" src="Beige.jpg">
+<div class="thumbs">
+<div class="thumb active" onclick="changePic('Beige.jpg',this)"><img src="Beige.jpg"></div>
+<div class="thumb" onclick="changePic('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
+<div class="thumb" onclick="changePic('GREY.jpg',this)"><img src="GREY.jpg"></div>
+<div class="thumb" onclick="changePic('black.jpg',this)"><img src="black.jpg"></div>
+</div>
+</div>
+
+<div class="right">
+<span class="badge">BEST SELLER 2025 • PREMIUM</span>
+<div class="title">Skecher Slip-Ins<br>Art-013 Edition</div>
+<div class="stars">★★★★★ 4.9 (1,247 Reviews) • In Stock</div>
+
+<div class="price-row">
+<div class="price">Rs. 4,899</div>
+<div class="cut">Rs. 5,500</div>
+<div class="off">SAVE 11%</div>
+</div>
+
+<div class="details">
+<h4>📦 PRODUCT DETAILS</h4>
+<p>✓ <b>Material:</b> Premium Breathable Mesh + Memory Foam</p>
+<p>✓ <b>Sole:</b> Anti-Slip Rubber, Shock Absorber, Ultra Light</p>
+<p>✓ <b>Comfort:</b> Slip-Ins Tech - No Laces, Easy to Wear</p>
+<p>✓ <b>Sizes:</b> 40, 41, 42, 43, 44 Available</p>
+<p>✓ <b>Colors:</b> Beige, Navy Blue, Grey, Black</p>
+<p>✓ <b>Use For:</b> Daily, Office, Walking, Gym, Travel</p>
+</div>
+
+<p style="font-weight:800;margin:6px 0">Select Color:</p>
+<div class="sizes" id="colorRow">
+<div class="sz active" onclick="pickColor(this,'Beige.jpg')">Beige</div>
+<div class="sz" onclick="pickColor(this,'Navy blue.jpg')">Navy</div>
+<div class="sz" onclick="pickColor(this,'GREY.jpg')">Grey</div>
+<div class="sz" onclick="pickColor(this,'black.jpg')">Black</div>
+</div>
+
+<p style="font-weight:800;margin:6px 0">Select Size:</p>
+<div class="sizes" id="sizeRow">
+<div class="sz" onclick="pickSize(this)">40</div>
+<div class="sz" onclick="pickSize(this)">41</div>
+<div class="sz active" onclick="pickSize(this)">42</div>
+<div class="sz" onclick="pickSize(this)">43</div>
+<div class="sz" onclick="pickSize(this)">44</div>
+</div>
+
+<button class="btn" onclick="orderNow()">ORDER NOW - WHATSAPP</button>
+
+<div class="trust">
+<div><b>1000+</b> Customers</div>
+<div><b>4.9★</b> Rating</div>
+<div><b>2-3 Days</b> Delivery</div>
+</div>
+</div>
+</div>
+
+<script>
+function changePic(src,el){
+document.getElementById('mainImg').src=src;
+document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+el.classList.add('active');
+}
+function pickColor(el,src){
+document.querySelectorAll('#colorRow.sz').forEach(s=>s.classList.remove('active'));
+el.classList.add('active');
+let thumbs=document.querySelectorAll('.thumb');
+for(let t of thumbs){if(t.innerHTML.includes(src.split('.')[0].split(' ')[0])){t.classList.add('active')} }
+document.getElementById('mainImg').src=src;
+document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.thumb img').forEach(img=>{
+if(img.getAttribute('src')===src){img.parentElement.classList.add('active')}
+});
+}
+function pickSize(el){
+el.parentElement.querySelectorAll('.sz').forEach(s=>s.classList.remove('active'));
+el.classList.add('active');
+}
+function orderNow(){
+let c=document.querySelector('#colorRow.sz.active').innerText;
+let s=document.querySelector('#sizeRow.sz.active').innerText;
+let msg=`Salam! LCS SHOES Art-013 Order Karna Hai%0AColor: ${c}%0ASize: ${s}%0APrice: Rs.4899%0AName:%0AAddress:%0ACity:`;
+window.open('https://wa.me/923001234567?text='+msg,'_blank');
+}
+</script>
+</body>
+</html>
