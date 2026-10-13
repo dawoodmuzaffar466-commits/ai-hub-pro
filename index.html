@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LCS SHOES - Premium</title>
+<title>LCS SHOES</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 .header{background:#000;color:#fff;padding:15px;text-align:center}
@@ -13,31 +13,31 @@
 .color-btn{width:70px;height:70px;border-radius:10px;border:3px solid #ddd;cursor:pointer;overflow:hidden}
 .color-btn.active{border-color:#000}
 .color-btn img{width:100%;height:100%;object-fit:cover}
-.info{padding:20px}.title{font-size:24px;font-weight:bold}
-.price{font-size:28px;color:#e60000;font-weight:bold}
-.old-price{text-decoration:line-through;color:#888;margin-left:10px;font-size:18px}
-.btn{width:100%;background:#000;color:#fff;padding:15px;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:15px}
+.info{padding:20px}.title{font-size:22px;font-weight:bold}
+.price{font-size:26px;color:#e60000;font-weight:bold}
+.btn{width:100%;background:#000;color:#fff;padding:15px;border:none;border-radius:10px;font-size:18px;font-weight:bold;margin-top:15px}
 </style>
 </head>
 <body>
-<div class="header"><h2>LCS SHOES STORE</h2><p>Cash on Delivery</p></div>
+<div class="header"><h2>LCS SHOES STORE</h2><p>Premium Quality • Rs.4899</p></div>
 <div class="product">
-<img id="mainImage" class="main-img" src="IMG-20261013-WA5833.jpg">
+<img id="mainImage" class="main-img" src="Beige.jpg">
 <div class="colors">
-<div class="color-btn active" onclick="changeColor('IMG-20261013-WA5833.jpg',this)"><img src="IMG-20261013-WA5833.jpg"></div>
-<div class="color-btn" onclick="changeColor('IMG-20261013-WA2663.jpg',this)"><img src="IMG-20261013-WA2663.jpg"></div>
-<div class="color-btn" onclick="changeColor('IMG-20261013-WA8895.jpg',this)"><img src="IMG-20261013-WA8895.jpg"></div>
-<div class="color-btn" onclick="changeColor('IMG-20261013-WA4114.jpg',this)"><img src="IMG-20261013-WA4114.jpg"></div>
+<div class="color-btn active" onclick="changeColor('Beige.jpg',this)"><img src="Beige.jpg"></div>
+<div class="color-btn" onclick="changeColor('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
+<div class="color-btn" onclick="changeColor('GREY.jpg',this)"><img src="GREY.jpg"></div>
+<div class="color-btn" onclick="changeColor('black.jpg',this)"><img src="black.jpg"></div>
 </div>
 <div class="info">
-<div class="title">Skecher Slip-Ins - Art-013</div>
-<div><span class="price">Rs. 4899</span><span class="old-price">Rs. 5500</span></div>
+<div class="title">Skecher Slip-Ins Art-013</div>
+<div class="price">Rs. 4899 <span style="text-decoration:line-through;color:#888;font-size:16px;margin-left:10px">Rs.5500</span></div>
+<p style="color:green;font-weight:bold;margin:10px 0">✓ In Stock • Size 40/44</p>
 <button class="btn" onclick="orderNow()">ORDER NOW - WhatsApp</button>
 </div>
 </div>
 <script>
 function changeColor(src,el){document.getElementById('mainImage').src=src;document.querySelectorAll('.color-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');}
-function orderNow(){window.open('https://wa.me/923001234567?text=Order LCS SHOES Art-013 Rs.4899','_blank');}
+function orderNow(){window.open('https://wa.me/923001234567?text=Salam! LCS SHOES Art-013 chahiye Rs.4899','_blank');}
 </script>
 </body>
 </html>
