@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LCS SHOES - Premium</title>
+<title>LCS SHOES - Premium Store</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui, sans-serif}
 body{background:#f5f5f7}
@@ -29,106 +29,4 @@ body{background:#f5f5f7}
 .off{background:#ff3b30;color:#fff;padding:7px 12px;border-radius:10px;font-weight:900;font-size:14px}
 .details{background:#f9fafb;padding:20px;border-radius:18px;margin:20px 0;border:1px solid #eee}
 .details h4{margin-bottom:12px;font-size:15px}
-.details p{color:#444;line-height:1.8;font-size:14px}
-.sizes{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
-.sz{padding:13px 22px;border:2.5px solid #e5e7eb;border-radius:14px;font-weight:800;cursor:pointer;background:#fff;transition:.2s}
-.sz.active{background:#000;color:#fff;border-color:#000}
-.btn{width:100%;background:#000;color:#fff;padding:21px;border:none;border-radius:18px;font-size:19px;font-weight:900;cursor:pointer;margin-top:20px;letter-spacing:.5px}
-.btn:hover{background:#111}
-.trust{display:flex;justify-content:space-between;margin-top:20px;text-align:center;font-size:12px;color:#666}
-.trust b{color:#000;font-size:15px;display:block}
-</style>
-</head>
-<body>
-<div class="top">🔥 FREE DELIVERY ALL PAKISTAN • CASH ON DELIVERY • 7 DAYS RETURN 🔥</div>
-<div class="header"><div class="logo">LCS SHOES</div><div>📞 0300-1234567</div></div>
-
-<div class="main">
-<div class="left">
-<img id="mainImg" class="main-img" src="Beige.jpg">
-<div class="thumbs">
-<div class="thumb active" onclick="changePic('Beige.jpg',this)"><img src="Beige.jpg"></div>
-<div class="thumb" onclick="changePic('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
-<div class="thumb" onclick="changePic('GREY.jpg',this)"><img src="GREY.jpg"></div>
-<div class="thumb" onclick="changePic('black.jpg',this)"><img src="black.jpg"></div>
-</div>
-</div>
-
-<div class="right">
-<span class="badge">BEST SELLER 2025 • PREMIUM</span>
-<div class="title">Skecher Slip-Ins<br>Art-013 Edition</div>
-<div class="stars">★★★★★ 4.9 (1,247 Reviews) • In Stock</div>
-
-<div class="price-row">
-<div class="price">Rs. 4,899</div>
-<div class="cut">Rs. 5,500</div>
-<div class="off">SAVE 11%</div>
-</div>
-
-<div class="details">
-<h4>📦 PRODUCT DETAILS</h4>
-<p>✓ <b>Material:</b> Premium Breathable Mesh + Memory Foam</p>
-<p>✓ <b>Sole:</b> Anti-Slip Rubber, Shock Absorber, Ultra Light</p>
-<p>✓ <b>Comfort:</b> Slip-Ins Tech - No Laces, Easy to Wear</p>
-<p>✓ <b>Sizes:</b> 40, 41, 42, 43, 44 Available</p>
-<p>✓ <b>Colors:</b> Beige, Navy Blue, Grey, Black</p>
-<p>✓ <b>Use For:</b> Daily, Office, Walking, Gym, Travel</p>
-</div>
-
-<p style="font-weight:800;margin:6px 0">Select Color:</p>
-<div class="sizes" id="colorRow">
-<div class="sz active" onclick="pickColor(this,'Beige.jpg')">Beige</div>
-<div class="sz" onclick="pickColor(this,'Navy blue.jpg')">Navy</div>
-<div class="sz" onclick="pickColor(this,'GREY.jpg')">Grey</div>
-<div class="sz" onclick="pickColor(this,'black.jpg')">Black</div>
-</div>
-
-<p style="font-weight:800;margin:6px 0">Select Size:</p>
-<div class="sizes" id="sizeRow">
-<div class="sz" onclick="pickSize(this)">40</div>
-<div class="sz" onclick="pickSize(this)">41</div>
-<div class="sz active" onclick="pickSize(this)">42</div>
-<div class="sz" onclick="pickSize(this)">43</div>
-<div class="sz" onclick="pickSize(this)">44</div>
-</div>
-
-<button class="btn" onclick="orderNow()">ORDER NOW - WHATSAPP</button>
-
-<div class="trust">
-<div><b>1000+</b> Customers</div>
-<div><b>4.9★</b> Rating</div>
-<div><b>2-3 Days</b> Delivery</div>
-</div>
-</div>
-</div>
-
-<script>
-function changePic(src,el){
-document.getElementById('mainImg').src=src;
-document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
-el.classList.add('active');
-}
-function pickColor(el,src){
-document.querySelectorAll('#colorRow.sz').forEach(s=>s.classList.remove('active'));
-el.classList.add('active');
-let thumbs=document.querySelectorAll('.thumb');
-for(let t of thumbs){if(t.innerHTML.includes(src.split('.')[0].split(' ')[0])){t.classList.add('active')} }
-document.getElementById('mainImg').src=src;
-document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
-document.querySelectorAll('.thumb img').forEach(img=>{
-if(img.getAttribute('src')===src){img.parentElement.classList.add('active')}
-});
-}
-function pickSize(el){
-el.parentElement.querySelectorAll('.sz').forEach(s=>s.classList.remove('active'));
-el.classList.add('active');
-}
-function orderNow(){
-let c=document.querySelector('#colorRow.sz.active').innerText;
-let s=document.querySelector('#sizeRow.sz.active').innerText;
-let msg=`Salam! LCS SHOES Art-013 Order Karna Hai%0AColor: ${c}%0ASize: ${s}%0APrice: Rs.4899%0AName:%0AAddress:%0ACity:`;
-window.open('https://wa.me/923001234567?text='+msg,'_blank');
-}
-</script>
-</body>
-</html>
+.details p{color:#444;line-height:1.8;font-size:
