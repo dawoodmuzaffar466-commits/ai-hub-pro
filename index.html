@@ -1,109 +1,77 @@
-"use client";
-import { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>LCS SHOES - Premium Comfort</title>
+<meta property="og:title" content="LCS SHOES - Art-013">
+<meta property="og:description" content="Premium Skecher Slip-Ins - Rs.4899 Only">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial}
+body{background:#fff}
+.top{position:sticky;top:0;z-index:99;background:#000;color:#fff;text-align:center;padding:10px;font-weight:800;font-size:12px;letter-spacing:1px}
+.head{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;background:#fff}
+.logo{font-weight:900;font-size:22px;letter-spacing:2px}
+.ph{font-weight:800;background:#000;color:#fff;padding:7px 14px;border-radius:20px;font-size:12px}
+.mimg{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff}
+.th{display:flex;gap:10px;padding:14px 16px;overflow-x:auto}
+.th div{width:75px;min-width:75px;height:75px;border:2.5px solid #eee;border-radius:12px;overflow:hidden}
+.th div.active{border-color:#000}
+.th img{width:100%;height:100%;object-fit:cover}
+.info{padding:20px 16px}
+.title{font-size:28px;font-weight:900;line-height:1.1}
+.stars{color:#ff9800;font-size:14px;margin:8px 0}
+.price{font-size:34px;font-weight:900;margin:12px 0}
+.cut{font-size:16px;color:#999;text-decoration:line-through;margin-left:8px;font-weight:400}
+.box{background:#f8f8f8;border-radius:14px;padding:16px;margin:16px 0}
+.box p{font-size:13px;line-height:2;color:#333}
+.label{font-weight:900;font-size:13px;margin:18px 0 10px;letter-spacing:.5px}
+.opt{padding:12px 18px;border:2px solid #ddd;border-radius:10px;margin:5px 5px 5px 0;display:inline-block;font-weight:700;font-size:14px}
+.opt.active{background:#000;color:#fff;border-color:#000}
+.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:18px;font-weight:900;margin-top:20px;position:sticky;bottom:10px}
+.small{text-align:center;font-size:11px;color:#666;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="top">FREE DELIVERY ALL PAKISTAN - 0304-7873838</div>
+<div class="head"><div class="logo">LCS SHOES</div><div class="ph">0304-7873838</div></div>
 
-export default function Home() {
-  const [selectedImage, setSelectedImage] = useState(0);
+<img id="main" class="mimg" src="Beige.jpg">
 
-  // Tumhari pics yahi hain - koi nuksan nahi hoga
-  const images = [
-    "https://images.unsplash.com/photo-1603808033176-935819eb3b43?q=80&w=800", // Beige wali - tum beige.jpg se replace kar sakte ho
-    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800", // Blue
-    "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=800", // Light Blue
-    "https://images.unsplash.com/photo-1603808033587-9359428479d?q=80&w=800", // Black - tum black.jpg se replace kar sakte ho
-  ];
+<div class="th">
+<div class="active" onclick="chg('Beige.jpg',this)"><img src="Beige.jpg"></div>
+<div onclick="chg('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
+<div onclick="chg('GREY.jpg',this)"><img src="GREY.jpg"></div>
+<div onclick="chg('black.jpg',this)"><img src="black.jpg"></div>
+</div>
 
-  return (
-    <main className="min-h-screen bg-white text-black">
-      {/* 1. TOP PREMIUM BAR - LCS SHOES KASUR */}
-      <div className="w-full bg-black text-white text-center py-3 tracking-[0.4em] font-black text-[11px] sm:text-[12px] sticky top-0 z-50">
-        LCS SHOES KASUR <span className="font-light text-[#D4AF37] ml-2">— PREMIUM EDITION</span>
-      </div>
+<div class="info">
+<div class="title">Skecher Slip-Ins Art-013</div>
+<div class="stars">★★★★★ 4.9 (1247 Reviews) • BEST SELLER</div>
+<div class="price">Rs.4,899<span class="cut">Rs.5,500</span></div>
 
-      {/* 2. HEADER */}
-      <header className="flex justify-between items-center px-5 py-4 border-b border-black/5 max-w-7xl mx-auto">
-        <h1 className="text-xl font-black tracking-widest">LCS SHOES</h1>
-        <a href="https://wa.me/923047873838" className="bg-black text-white rounded-full px-5 py-2 text-xs font-bold tracking-widest">0304-7873838</a>
-      </header>
+<div class="box">
+<p>✓ <b>Material:</b> Breathable Mesh + Memory Foam</p>
+<p>✓ <b>Sole:</b> Anti-Slip, Light Weight, Shock Absorber</p>
+<p>✓ <b>Design:</b> Slip-Ins - No Laces Needed</p>
+<p>✓ <b>Delivery:</b> 2-3 Days All Pakistan - Cash On Delivery</p>
+</div>
 
-      {/* 3. PRODUCT SECTION - Pics Safe */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-5 py-8">
-        {/* Left - Images */}
-        <div>
-          <div className="bg-[#FAFAFA] rounded-[30px] p-10 flex items-center justify-center aspect-square">
-            <img src={images[selectedImage]} alt="Skecher Art-013" className="w-full object-contain drop-shadow-2xl" />
-          </div>
-          <div className="grid grid-cols-4 gap-3 mt-4">
-            {images.map((img, i) => (
-              <button key={i} onClick={()=>setSelectedImage(i)} className={`bg-[#FAFAFA] rounded-2xl p-2 border-2 ${selectedImage===i? 'border-black' : 'border-transparent'}`}>
-                <img src={img} className="w-full aspect-square object-contain" />
-              </button>
-            ))}
-          </div>
-        </div>
+<div class="label">SELECT COLOR</div>
+<div id="colors"><span class="opt active" onclick="selC(this,'Beige.jpg')">Beige</span><span class="opt" onclick="selC(this,'Navy blue.jpg')">Navy Blue</span><span class="opt" onclick="selC(this,'GREY.jpg')">Grey</span><span class="opt" onclick="selC(this,'black.jpg')">Black</span></div>
 
-        {/* Right - Details + Form */}
-        <div className="pt-2">
-          <p className="text-[11px] tracking-[0.3em] text-gray-400 font-bold">ART-013 • PREMIUM COMFORT</p>
-          <h2 className="text-3xl font-black mt-3 leading-tight">Skecher Slip-Ins<br/>Art-013</h2>
+<div class="label">SELECT SIZE (40-44)</div>
+<div id="sizes"><span class="opt" onclick="selS(this)">40</span><span class="opt" onclick="selS(this)">41</span><span class="opt active" onclick="selS(this)">42</span><span class="opt" onclick="selS(this)">43</span><span class="opt" onclick="selS(this)">44</span></div>
 
-          <div className="flex items-baseline gap-3 mt-4">
-            <span className="text-3xl font-black">Rs.4,899</span>
-            <span className="text-gray-400 line-through">Rs.5,500</span>
-            <span className="bg-black text-white text-[10px] px-2 py-1 rounded-full tracking-widest">FREE DELIVERY</span>
-          </div>
+<button class="btn" onclick="order()">ORDER NOW - WHATSAPP</button>
+<div class="small">🚚 Free Delivery | ↩️ 7 Days Return | 💳 COD | 📞 0304-7873838<br><br><b>LCS SHOES</b> - Premium Footwear Pakistan</div>
+</div>
 
-          <ul className="mt-6 space-y-2 text-sm text-gray-600">
-            <li>✓ Memory Foam - Sara Din Comfort</li>
-            <li>✓ Slip-Ins - Bina Haath Lagaye Pehno</li>
-            <li>✓ Premium Mesh - Garmi Nahi Lagegi</li>
-            <li>✓ Free Delivery All Pakistan</li>
-          </ul>
-
-          {/* 4. PREMIUM ORDER FORM - YAHI PE CUSTOMER ADDRESS LIKHEGA */}
-          <div className="mt-8 bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] border border-black/[0.06] p-6">
-            <h3 className="text-center font-black tracking-[0.2em] text-sm">ORDER FORM - LCS SHOES KASUR</h3>
-            <p className="text-center text-[10px] tracking-widest text-gray-400 mt-1 mb-5">CASH ON DELIVERY • 0304-7873838</p>
-
-            <div className="space-y-3">
-              <input id="cName" placeholder="Apna Naam Likhein" className="w-full bg-[#F7F7F7] rounded-full px-5 py-4 text-sm outline-none focus:bg-white focus:ring-2 focus:ring-black/10 border-transparent" />
-              <input id="cPhone" placeholder="WhatsApp Number" className="w-full bg-[#F7F7F7] rounded-full px-5 py-4 text-sm outline-none focus:bg-white focus:ring-2 focus:ring-black/10 border border-transparent" />
-              <input id="cAddress" placeholder="Mukammal Address (Ghar / City)" className="w-full bg-[#F7F7F7] rounded-full px-5 py-4 text-sm outline-none focus:bg-white focus:ring-2 focus:ring-black/10 border border-transparent" />
-
-              <div className="grid grid-cols-2 gap-3">
-                <select id="cSize" className="w-full bg-[#F7F7F7] rounded-full px-5 py-4 text-sm outline-none border border-transparent">
-                  <option>Size - 40</option><option>41</option><option>42</option><option>43</option><option>44</option>
-                </select>
-                <select id="cColor" className="w-full bg-[#F7F7F7] rounded-full px-5 py-4 text-sm outline-none border border-transparent">
-                  <option>Beige (Art-013)</option><option>Black</option><option>Navy Blue</option><option>Grey</option>
-                </select>
-              </div>
-
-              <button onClick={()=>{
-                // @ts-ignore
-                const n = document.getElementById('cName').value;
-                // @ts-ignore
-                const p = document.getElementById('cPhone').value;
-                // @ts-ignore
-                const a = document.getElementById('cAddress').value;
-                // @ts-ignore
-                const s = document.getElementById('cSize').value;
-                // @ts-ignore
-                const c = document.getElementById('cColor').value;
-                if(!n ||!p ||!a){ alert('Naam, Number, Address likhna zaruri hai!'); return; }
-                const msg = `*LCS SHOES KASUR - NEW ORDER*%0A%0A*Product:* Skecher Art-013%0A*Name:* ${n}%0A*Phone:* ${p}%0A*Address:* ${a}%0A*Size:* ${s}%0A*Color:* ${c}%0A*Price:* Rs.4899 Free Delivery%0A%0A*Website:* lcs-shoes-kasur.vercel.app`;
-                window.open(`https://wa.me/923047873838?text=${msg}`, '_blank');
-              }} className="w-full bg-black text-white rounded-full py-5 font-black tracking-[0.2em] text-xs mt-2 hover:bg-[#111] transition">
-                ORDER CONFIRM KAREIN - WHATSAPP
-              </button>
-              <p className="text-center text-[10px] text-gray-400 mt-2">✓ 100% Original • Cash on Delivery • 3 Din Return</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer className="text-center py-10 text-[10px] tracking-[0.3em] text-gray-400 border-t mt-10">
-        LCS SHOES KASUR © 2026 — PREMIUM FOOTWEAR
-      </footer>
-    </main>
-  );
-}
+<script>
+function chg(s,e){document.getElementById('main').src=s;document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
+function selC(e,s){document.querySelectorAll('#colors .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active');document.getElementById('main').src=s}
+function selS(e){document.querySelectorAll('#sizes .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
+function order(){var c=document.querySelector('#colors .opt.active').innerText;var sz=document.querySelector('#sizes .opt.active').innerText;window.open('https://wa.me/923047873838?text=Salam! LCS SHOES Order%0AArt-013%0AColor:'+c+'%0ASize:'+sz+'%0APrice:4899','_blank')}
+</script>
+</body>
+</html>
