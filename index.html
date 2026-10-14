@@ -27,13 +27,12 @@ body{background:#fff}
 .label{font-weight:900;font-size:13px;margin:18px 0 10px;letter-spacing:.5px}
 .opt{padding:12px 18px;border:2px solid #ddd;border-radius:10px;margin:5px 5px 5px 0;display:inline-block;font-weight:700;font-size:14px;cursor:pointer}
 .opt.active{background:#000;color:#fff;border-color:#000}
-/* PREMIUM FORM */
 .formBox{background:#fff;border:1.5px solid #000;border-radius:20px;padding:18px;margin-top:20px;box-shadow:0 15px 40px rgba(0,0,0,0.08)}
 .formBox h3{text-align:center;font-weight:900;letter-spacing:3px;font-size:13px}
 .formBox p.sub{text-align:center;font-size:10px;letter-spacing:2px;color:#888;margin:6px 0 14px}
 .inp{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid #eee;background:#F8F8F8;margin-bottom:10px;font-size:14px;outline:none}
 .inp:focus{background:#fff;border-color:#000}
-.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:16px;font-weight:900;margin-top:10px;letter-spacing:1px}
+.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:16px;font-weight:900;margin-top:10px;letter-spacing:1px;cursor:pointer}
 .small{text-align:center;font-size:11px;color:#666;margin-top:14px}
 </style>
 </head>
@@ -68,14 +67,13 @@ body{background:#fff}
 <div class="label">SELECT SIZE (40-44)</div>
 <div id="sizes"><span class="opt" onclick="selS(this)">40</span><span class="opt" onclick="selS(this)">41</span><span class="opt active" onclick="selS(this)">42</span><span class="opt" onclick="selS(this)">43</span><span class="opt" onclick="selS(this)">44</span></div>
 
-<!-- PREMIUM ORDER FORM - YAHI PE CUSTOMER ADDRESS LIKHEGA -->
 <div class="formBox">
 <h3>LCS SHOES KASUR - ORDER FORM</h3>
 <p class="sub">FREE DELIVERY ALL PAKISTAN • 0304-7873838</p>
 <input id="cName" class="inp" placeholder="Apna Naam Likhein">
-<input id="cPhone" class="inp" placeholder="WhatsApp Number">
+<input id="cPhone" class="inp" type="tel" placeholder="WhatsApp Number">
 <input id="cAddress" class="inp" placeholder="Mukammal Address - Ghar / City">
-<button class="btn" onclick="order()">CONFIRM ORDER - WHATSAPP PE BHEJEIN</button>
+<button class="btn" id="whatsBtn" type="button">CONFIRM ORDER - WHATSAPP PE BHEJEIN</button>
 </div>
 
 <div class="small">🚚 Free Delivery | ↩️ 7 Days Return | 💳 COD | 📞 0304-7873838<br><br><b>LCS SHOES KASUR</b> - Premium Footwear Kasur</div>
@@ -85,10 +83,18 @@ body{background:#fff}
 function chg(s,e){document.getElementById('main').src=s;document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
 function selC(e,s){document.querySelectorAll('#colors .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active');document.getElementById('main').src=s}
 function selS(e){document.querySelectorAll('#sizes .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
-function order(){
+
+document.getElementById('whatsBtn').addEventListener('click', function(){
  var c=document.querySelector('#colors .opt.active').innerText;
  var sz=document.querySelector('#sizes .opt.active').innerText;
- var name=document.getElementById('cName').value;
- var phone=document.getElementById('cPhone').value;
- var address=document.getElementById('cAddress').value;
- if(!name || !phone || !address){alert
+ var name=document.getElementById('cName').value.trim();
+ var phone=document.getElementById('cPhone').value.trim();
+ var address=document.getElementById('cAddress').value.trim();
+ if(name==="" || phone==="" || address===""){alert("Bhai pehle Naam, Number, Address fill karo!");return;}
+ var message = "LCS SHOES KASUR - NEW ORDER\n\nProduct: Skecher Art-013\nColor: " + c + "\nSize: " + sz + "\n\nName: " + name + "\nPhone: " + phone + "\nAddress: " + address + "\nPrice: Rs.4899\n\nWebsite: lcs-shoes-kasur.vercel.app";
+ var url = "https://api.whatsapp.com/send?phone=923047873838&text=" + encodeURIComponent(message);
+ window.location.href = url;
+});
+</script>
+</body>
+</html>
