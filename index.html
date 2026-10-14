@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>LCS SHOES - Premium Comfort</title>
-<meta property="og:title" content="LCS SHOES - Art-013">
-<meta property="og:description" content="Premium Skecher Slip-Ins - Rs.4899 Only">
+<title>LCS SHOES KASUR - Premium Comfort</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial}
 body{background:#fff}
-.top{position:sticky;top:0;z-index:99;background:#000;color:#fff;text-align:center;padding:10px;font-weight:800;font-size:12px;letter-spacing:1px}
+.top{position:sticky;top:0;z-index:99;background:#000;color:#fff;text-align:center;padding:12px;font-weight:900;font-size:11px;letter-spacing:4px}
+.top span{color:#D4AF37;font-weight:400;letter-spacing:2px;margin-left:8px}
 .head{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;background:#fff}
 .logo{font-weight:900;font-size:22px;letter-spacing:2px}
 .ph{font-weight:800;background:#000;color:#fff;padding:7px 14px;border-radius:20px;font-size:12px}
@@ -26,14 +25,20 @@ body{background:#fff}
 .box{background:#f8f8f8;border-radius:14px;padding:16px;margin:16px 0}
 .box p{font-size:13px;line-height:2;color:#333}
 .label{font-weight:900;font-size:13px;margin:18px 0 10px;letter-spacing:.5px}
-.opt{padding:12px 18px;border:2px solid #ddd;border-radius:10px;margin:5px 5px 5px 0;display:inline-block;font-weight:700;font-size:14px}
+.opt{padding:12px 18px;border:2px solid #ddd;border-radius:10px;margin:5px 5px 5px 0;display:inline-block;font-weight:700;font-size:14px;cursor:pointer}
 .opt.active{background:#000;color:#fff;border-color:#000}
-.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:18px;font-weight:900;margin-top:20px;position:sticky;bottom:10px}
+/* PREMIUM FORM */
+.formBox{background:#fff;border:1.5px solid #000;border-radius:20px;padding:18px;margin-top:20px;box-shadow:0 15px 40px rgba(0,0,0,0.08)}
+.formBox h3{text-align:center;font-weight:900;letter-spacing:3px;font-size:13px}
+.formBox p.sub{text-align:center;font-size:10px;letter-spacing:2px;color:#888;margin:6px 0 14px}
+.inp{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid #eee;background:#F8F8F8;margin-bottom:10px;font-size:14px;outline:none}
+.inp:focus{background:#fff;border-color:#000}
+.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:16px;font-weight:900;margin-top:10px;letter-spacing:1px}
 .small{text-align:center;font-size:11px;color:#666;margin-top:14px}
 </style>
 </head>
 <body>
-<div class="top">FREE DELIVERY ALL PAKISTAN - 0304-7873838</div>
+<div class="top">LCS SHOES KASUR <span>PREMIUM COLLECTION</span></div>
 <div class="head"><div class="logo">LCS SHOES</div><div class="ph">0304-7873838</div></div>
 
 <img id="main" class="mimg" src="Beige.jpg">
@@ -63,15 +68,27 @@ body{background:#fff}
 <div class="label">SELECT SIZE (40-44)</div>
 <div id="sizes"><span class="opt" onclick="selS(this)">40</span><span class="opt" onclick="selS(this)">41</span><span class="opt active" onclick="selS(this)">42</span><span class="opt" onclick="selS(this)">43</span><span class="opt" onclick="selS(this)">44</span></div>
 
-<button class="btn" onclick="order()">ORDER NOW - WHATSAPP</button>
-<div class="small">🚚 Free Delivery | ↩️ 7 Days Return | 💳 COD | 📞 0304-7873838<br><br><b>LCS SHOES</b> - Premium Footwear Pakistan</div>
+<!-- PREMIUM ORDER FORM - YAHI PE CUSTOMER ADDRESS LIKHEGA -->
+<div class="formBox">
+<h3>LCS SHOES KASUR - ORDER FORM</h3>
+<p class="sub">FREE DELIVERY ALL PAKISTAN • 0304-7873838</p>
+<input id="cName" class="inp" placeholder="Apna Naam Likhein">
+<input id="cPhone" class="inp" placeholder="WhatsApp Number">
+<input id="cAddress" class="inp" placeholder="Mukammal Address - Ghar / City">
+<button class="btn" onclick="order()">CONFIRM ORDER - WHATSAPP PE BHEJEIN</button>
+</div>
+
+<div class="small">🚚 Free Delivery | ↩️ 7 Days Return | 💳 COD | 📞 0304-7873838<br><br><b>LCS SHOES KASUR</b> - Premium Footwear Kasur</div>
 </div>
 
 <script>
 function chg(s,e){document.getElementById('main').src=s;document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
 function selC(e,s){document.querySelectorAll('#colors .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active');document.getElementById('main').src=s}
 function selS(e){document.querySelectorAll('#sizes .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
-function order(){var c=document.querySelector('#colors .opt.active').innerText;var sz=document.querySelector('#sizes .opt.active').innerText;window.open('https://wa.me/923047873838?text=Salam! LCS SHOES Order%0AArt-013%0AColor:'+c+'%0ASize:'+sz+'%0APrice:4899','_blank')}
-</script>
-</body>
-</html>
+function order(){
+ var c=document.querySelector('#colors .opt.active').innerText;
+ var sz=document.querySelector('#sizes .opt.active').innerText;
+ var name=document.getElementById('cName').value;
+ var phone=document.getElementById('cPhone').value;
+ var address=document.getElementById('cAddress').value;
+ if(!name || !phone || !address){alert
