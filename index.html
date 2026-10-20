@@ -7,36 +7,37 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial}
 body{background:#fff}
-.top{position:sticky;top:0;z-index:99;background:#000;color:#fff;text-align:center;padding:12px;font-weight:900;font-size:11px;letter-spacing:4px}
+.top{position:sticky;top:0;z-index:99;background:#000;color:#fff;text-align:center;padding:12px;font-weight:900;font-size:13px}
 .top span{color:#D4AF37;font-weight:400;letter-spacing:2px;margin-left:8px}
 .head{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;background:#fff}
 .logo{font-weight:900;font-size:22px;letter-spacing:2px}
 .ph{font-weight:800;background:#000;color:#fff;padding:7px 14px;border-radius:20px;font-size:12px}
 .mimg{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff}
-.th{display:flex;gap:10px;padding:14px 16px;overflow-x:auto}
-.th div{width:75px;min-width:75px;height:75px;border:2.5px solid #eee;border-radius:12px;overflow:hidden}
+.th{display:flex;gap:10px;padding:16px 16px;overflow-x:auto}
+.th div{width:75px;min-width:75px;height:75px;border:2.5px solid #eee;border-radius:12px;overflow:hidden;cursor:pointer}
 .th div.active{border-color:#000}
 .th img{width:100%;height:100%;object-fit:cover}
 .info{padding:20px 16px}
-.title{font-size:28px;font-weight:900;line-height:1.1}
+.title{font-size:22px;font-weight:900;line-height:1.1}
 .stars{color:#ff9800;font-size:14px;margin:8px 0}
 .price{font-size:34px;font-weight:900;margin:12px 0}
 .cut{font-size:16px;color:#999;text-decoration:line-through;margin-left:8px;font-weight:400}
 .box{background:#f8f8f8;border-radius:14px;padding:16px;margin:16px 0}
 .box p{font-size:13px;line-height:2;color:#333}
-.label{font-weight:900;font-size:13px;margin:18px 0 10px;letter-spacing:.5px}
-.opt{padding:12px 18px;border:2px solid #ddd;border-radius:10px;margin:5px 5px 5px 0;display:inline-block;font-weight:700;font-size:14px;cursor:pointer}
+.label{font-weight:900;font-size:13px;margin:16px 0 10px;letter-spacing:.5px}
+.opt{padding:12px 18px;border:2px solid #ddd;border-radius:10px;margin:5px 5px 5px 0;display:inline-block;font-weight:700;cursor:pointer}
 .opt.active{background:#000;color:#fff;border-color:#000}
-.formBox{background:#fff;border:1.5px solid #000;border-radius:20px;padding:18px;margin-top:20px;box-shadow:0 15px 40px rgba(0,0,0,0.08)}
-.formBox h3{text-align:center;font-weight:900;letter-spacing:3px;font-size:13px}
+.formBox{background:#fff;border:1.5px solid #000;border-radius:22px;padding:18px;margin-top:20px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.formBox h2{text-align:center;font-weight:900;letter-spacing:2px;font-size:13px}
 .formBox p.sub{text-align:center;font-size:10px;letter-spacing:2px;color:#888;margin:6px 0 14px}
-.inp{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid #eee;background:#F8F8F8;margin-bottom:10px;font-size:14px;outline:none}
-.inp:focus{background:#fff;border-color:#000}
-.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:16px;font-weight:900;margin-top:10px;letter-spacing:1px;cursor:pointer}
-.small{text-align:center;font-size:11px;color:#666;margin-top:14px}
+.inp{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid #ddd;background:#f8f8f8;margin-bottom:10px;font-size:14px}
+.inp:focus{background:#fff;border-color:#000;outline:none}
+.btn{width:100%;background:#000;color:#fff;padding:18px;border:none;border-radius:14px;font-size:16px;font-weight:900;cursor:pointer;margin-top:4px}
+.small{text-align:center;font-size:11px;color:#666;margin-top:14px;line-height:1.6}
 </style>
 </head>
 <body>
+
 <div class="top">LCS SHOES KASUR <span>PREMIUM COLLECTION</span></div>
 <div class="head"><div class="logo">LCS SHOES</div><div class="ph">0304-7873838</div></div>
 
@@ -44,31 +45,41 @@ body{background:#fff}
 
 <div class="th">
 <div class="active" onclick="chg('Beige.jpg',this)"><img src="Beige.jpg"></div>
-<div onclick="chg('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
-<div onclick="chg('GREY.jpg',this)"><img src="GREY.jpg"></div>
 <div onclick="chg('black.jpg',this)"><img src="black.jpg"></div>
+<div onclick="chg('white.jpg',this)"><img src="white.jpg"></div>
+<div onclick="chg('beige.cream.jpg',this)"><img src="beige.cream.jpg"></div>
+<div onclick="chg('Premium black.jpg',this)"><img src="Premium black.jpg"></div>
+<div onclick="chg('GREY.jpg',this)"><img src="GREY.jpg"></div>
+<div onclick="chg('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
 </div>
 
 <div class="info">
-<div class="title">Skecher Slip-Ins Art-013</div>
+<div class="title">LCS RUNEZ - Premium Comfort</div>
 <div class="stars">★★★★★ 4.9 (1247 Reviews) • BEST SELLER</div>
 <div class="price">Rs.4,899<span class="cut">Rs.5,500</span></div>
 
 <div class="box">
-<p>✓ <b>Material:</b> Breathable Mesh + Memory Foam</p>
-<p>✓ <b>Sole:</b> Anti-Slip, Light Weight, Shock Absorber</p>
-<p>✓ <b>Design:</b> Slip-Ins - No Laces Needed</p>
-<p>✓ <b>Delivery:</b> 2-3 Days All Pakistan - Cash On Delivery</p>
+<p><b>Material:</b> Breathable Mesh + Memory Foam</p>
+<p><b>Sole:</b> Anti-Slip, Light Weight, Shock Absorber</p>
+<p><b>Design:</b> Slip-Ins - No Laces Needed</p>
+<p><b>Delivery:</b> 2-3 Days All Pakistan - Cash On Delivery</p>
 </div>
 
 <div class="label">SELECT COLOR</div>
-<div id="colors"><span class="opt active" onclick="selC(this,'Beige.jpg')">Beige</span><span class="opt" onclick="selC(this,'Navy blue.jpg')">Navy Blue</span><span class="opt" onclick="selC(this,'GREY.jpg')">Grey</span><span class="opt" onclick="selC(this,'black.jpg')">Black</span></div>
+<div id="colors">
+<span class="opt active" onclick="selC(this,'Beige.jpg')">Beige</span>
+<span class="opt" onclick="selC(this,'black.jpg')">Premium Black</span>
+<span class="opt" onclick="selC(this,'white.jpg')">White</span>
+<span class="opt" onclick="selC(this,'beige.cream.jpg')">Cream</span>
+<span class="opt" onclick="selC(this,'GREY.jpg')">Grey</span>
+<span class="opt" onclick="selC(this,'Navy blue.jpg')">Navy Blue</span>
+</div>
 
 <div class="label">SELECT SIZE (40-44)</div>
-<div id="sizes"><span class="opt" onclick="selS(this)">40</span><span class="opt" onclick="selS(this)">41</span><span class="opt active" onclick="selS(this)">42</span><span class="opt" onclick="selS(this)">43</span><span class="opt" onclick="selS(this)">44</span></div>
+<div id="sizes"><span class="opt" onclick="selS(this)">40</span><span class="opt" onclick="selS(this)">41</span><span class="opt" onclick="selS(this)">42</span><span class="opt" onclick="selS(this)">43</span><span class="opt" onclick="selS(this)">44</span></div>
 
 <div class="formBox">
-<h3>LCS SHOES KASUR - ORDER FORM</h3>
+<h2>LCS SHOES KASUR - ORDER FORM</h2>
 <p class="sub">FREE DELIVERY ALL PAKISTAN • 0304-7873838</p>
 <input id="cName" class="inp" placeholder="Apna Naam Likhein">
 <input id="cPhone" class="inp" type="tel" placeholder="WhatsApp Number">
@@ -76,25 +87,21 @@ body{background:#fff}
 <button class="btn" id="whatsBtn" type="button">CONFIRM ORDER - WHATSAPP PE BHEJEIN</button>
 </div>
 
-<div class="small">🚚 Free Delivery | ↩️ 7 Days Return | 💳 COD | 📞 0304-7873838<br><br><b>LCS SHOES KASUR</b> - Premium Footwear Kasur</div>
+<div class="small">🚚 Free Delivery | 📦 7 Days Return | 💵 COD | 📞 0304-7873838<br>© LCS SHOES KASUR - Premium Comfort Collection</div>
 </div>
 
 <script>
-function chg(s,e){document.getElementById('main').src=s;document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
-function selC(e,s){document.querySelectorAll('#colors .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active');document.getElementById('main').src=s}
-function selS(e){document.querySelectorAll('#sizes .opt').forEach(d=>d.classList.remove('active'));e.classList.add('active')}
-
-document.getElementById('whatsBtn').addEventListener('click', function(){
- var c=document.querySelector('#colors .opt.active').innerText;
- var sz=document.querySelector('#sizes .opt.active').innerText;
- var name=document.getElementById('cName').value.trim();
- var phone=document.getElementById('cPhone').value.trim();
- var address=document.getElementById('cAddress').value.trim();
- if(name==="" || phone==="" || address===""){alert("Bhai pehle Naam, Number, Address fill karo!");return;}
- var message = "LCS SHOES KASUR - NEW ORDER\n\nProduct: Skecher Art-013\nColor: " + c + "\nSize: " + sz + "\n\nName: " + name + "\nPhone: " + phone + "\nAddress: " + address + "\nPrice: Rs.4899\n\nWebsite: lcs-shoes-kasur.vercel.app";
- var url = "https://api.whatsapp.com/send?phone=923047873838&text=" + encodeURIComponent(message);
- window.location.href = url;
-});
+let selectedColor='Beige'; let selectedSize='';
+function chg(src,el){document.getElementById('main').src=src; document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active')); if(el) el.classList.add('active');}
+function selC(el,src){document.querySelectorAll('#colors .opt').forEach(o=>o.classList.remove('active')); el.classList.add('active'); selectedColor=el.innerText; chg(src,null);}
+function selS(el){document.querySelectorAll('#sizes .opt').forEach(o=>o.classList.remove('active')); el.classList.add('active'); selectedSize=el.innerText;}
+document.getElementById('whatsBtn').onclick=function(){
+let n=document.getElementById('cName').value.trim(); let p=document.getElementById('cPhone').value.trim(); let a=document.getElementById('cAddress').value.trim();
+if(!n||!p||!a){alert('Naam, Number aur Address likhna zaroori hai'); return;}
+if(!selectedSize){alert('Size select karein'); return;}
+let msg=`*NEW ORDER - LCS SHOES KASUR*%0A%0A👟 Product: LCS RUNEZ%0A🎨 Color: ${selectedColor}%0A📏 Size: ${selectedSize}%0A%0A👤 Name: ${n}%0A📞 Phone: ${p}%0A🏠 Address: ${a}%0A%0A💰 Price: Rs.4,899 - Free Delivery`;
+window.open(`https://wa.me/923047873838?text=${msg}`,'_blank');
+}
 </script>
 </body>
 </html>
