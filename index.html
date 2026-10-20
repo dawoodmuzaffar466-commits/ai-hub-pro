@@ -46,11 +46,11 @@ body{background:#fff}
 <div class="th">
 <div class="active" onclick="chg('Beige.jpg',this)"><img src="Beige.jpg"></div>
 <div onclick="chg('black.jpg',this)"><img src="black.jpg"></div>
-<div onclick="chg('white.jpg',this)"><img src="white.jpg"></div>
-<div onclick="chg('beige.cream.jpg',this)"><img src="beige.cream.jpg"></div>
-<div onclick="chg('Premium black.jpg',this)"><img src="Premium black.jpg"></div>
 <div onclick="chg('GREY.jpg',this)"><img src="GREY.jpg"></div>
 <div onclick="chg('Navy blue.jpg',this)"><img src="Navy blue.jpg"></div>
+<div onclick="chg('LCS-New-Collection/white.jpg',this)"><img src="LCS-New-Collection/white.jpg"></div>
+<div onclick="chg('LCS-New-Collection/beige.cream.jpg',this)"><img src="LCS-New-Collection/beige.cream.jpg"></div>
+<div onclick="chg('LCS-New-Collection/Premium black.jpg',this)"><img src="LCS-New-Collection/Premium black.jpg"></div>
 </div>
 
 <div class="info">
@@ -65,14 +65,19 @@ body{background:#fff}
 <p><b>Delivery:</b> 2-3 Days All Pakistan - Cash On Delivery</p>
 </div>
 
-<div class="label">SELECT COLOR</div>
-<div id="colors">
+<div class="label">SELECT COLOR - OLD COLLECTION</div>
+<div id="colors-old">
 <span class="opt active" onclick="selC(this,'Beige.jpg')">Beige</span>
-<span class="opt" onclick="selC(this,'black.jpg')">Premium Black</span>
-<span class="opt" onclick="selC(this,'white.jpg')">White</span>
-<span class="opt" onclick="selC(this,'beige.cream.jpg')">Cream</span>
+<span class="opt" onclick="selC(this,'black.jpg')">Black</span>
 <span class="opt" onclick="selC(this,'GREY.jpg')">Grey</span>
 <span class="opt" onclick="selC(this,'Navy blue.jpg')">Navy Blue</span>
+</div>
+
+<div class="label">SELECT COLOR - NEW LCS PREMIUM (NEW FOLDER)</div>
+<div id="colors-new">
+<span class="opt" onclick="selC(this,'LCS-New-Collection/white.jpg')">White Premium</span>
+<span class="opt" onclick="selC(this,'LCS-New-Collection/beige.cream.jpg')">Beige Cream Premium</span>
+<span class="opt" onclick="selC(this,'LCS-New-Collection/Premium black.jpg')">Premium Black</span>
 </div>
 
 <div class="label">SELECT SIZE (40-44)</div>
@@ -93,7 +98,7 @@ body{background:#fff}
 <script>
 let selectedColor='Beige'; let selectedSize='';
 function chg(src,el){document.getElementById('main').src=src; document.querySelectorAll('.th div').forEach(d=>d.classList.remove('active')); if(el) el.classList.add('active');}
-function selC(el,src){document.querySelectorAll('#colors .opt').forEach(o=>o.classList.remove('active')); el.classList.add('active'); selectedColor=el.innerText; chg(src,null);}
+function selC(el,src){document.querySelectorAll('.opt').forEach(o=>{if(o.parentElement.id.includes('colors')) o.classList.remove('active')}); el.classList.add('active'); selectedColor=el.innerText; chg(src,null);}
 function selS(el){document.querySelectorAll('#sizes .opt').forEach(o=>o.classList.remove('active')); el.classList.add('active'); selectedSize=el.innerText;}
 document.getElementById('whatsBtn').onclick=function(){
 let n=document.getElementById('cName').value.trim(); let p=document.getElementById('cPhone').value.trim(); let a=document.getElementById('cAddress').value.trim();
